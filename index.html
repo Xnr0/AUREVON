@@ -7,139 +7,185 @@
     <style>
         @import url('https://googleapis.com');
 
-        /* আল্ট্রা-লাক্সারি ডার্ক মিনিমালিজম */
+        /* ১০,০০০ গুণ লাক্সারি কন্টিনুয়াস ব্যাকগ্রাউন্ড */
         body {
             margin: 0;
             padding: 0;
-            background-color: #050505;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 50%, #15120c 0%, #070604 70%, #000000 100%);
             color: #FFFFFF;
             font-family: 'Montserrat', sans-serif;
             text-align: center;
             overflow-x: hidden;
+            position: relative;
         }
-        
-        /* রাজকীয় মেটালিক হেডার */
+
+        /* ইউনিক ব্যাকগ্রাউন্ড আর্ট এলিমেন্ট - গোল্ডেন লিকুইড ওয়েভ */
+        body::before {
+            content: "";
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 140%;
+            height: 140%;
+            background: transparent;
+            background-image: 
+                radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 0),
+                radial-gradient(rgba(212, 175, 55, 0.05) 2px, transparent 0);
+            background-size: 40px 40px, 80px 80px;
+            z-index: 0;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        /* মেটালিক ও রয়্যাল হেডার */
         header {
-            padding: 50px 20px;
-            background: linear-gradient(180deg, rgba(212,175,55,0.05) 0%, rgba(0,0,0,0) 100%);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 60px 20px;
+            position: relative;
+            z-index: 10;
         }
         
         .logo {
             font-family: 'Cinzel', serif;
-            font-size: 50px;
-            letter-spacing: 12px;
-            color: #D4AF37;
+            font-size: 55px;
+            letter-spacing: 16px;
             margin: 0;
             font-weight: 700;
-            background: linear-gradient(45deg, #B38728, #FBF5B7, #DAA520, #AA771C);
+            background: linear-gradient(135deg, #cf9f3d 0%, #fbf5b7 25%, #aa771c 50%, #fbf5b7 75%, #b38728 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0px 2px 10px rgba(212,175,55,0.3));
+            filter: drop-shadow(0px 4px 15px rgba(212,175,55,0.4));
+            text-transform: uppercase;
         }
 
         .slogan {
-            font-size: 13px;
-            letter-spacing: 6px;
-            color: #8C8C8C;
-            margin-top: 15px;
+            font-size: 11px;
+            letter-spacing: 9px;
+            color: #b59b61;
+            margin-top: 18px;
             text-transform: uppercase;
-            font-weight: 200;
+            font-weight: 100;
+            opacity: 0.8;
         }
 
-        /* মেইন কন্টেইনার */
+        /* কন্টেন্ট সেকশন */
         .hero {
-            padding: 80px 20px;
+            padding: 40px 20px 100px 20px;
+            position: relative;
+            z-index: 10;
         }
 
         .hero h2 {
             font-family: 'Cinzel', serif;
-            font-size: 26px;
-            color: #FFFFFF;
-            margin-bottom: 40px;
-            letter-spacing: 4px;
-            font-weight: 400;
+            font-size: 22px;
+            color: #ffffff;
+            margin-bottom: 50px;
+            letter-spacing: 6px;
+            font-weight: 300;
+            opacity: 0.9;
         }
 
-        /* প্রিমিয়াম কন্টেইনার বক্স */
+        /* গ্লাসমরফিজম আল্ট্রা-এলিট প্রোডাক্ট বক্স */
         .product-box {
-            background: linear-gradient(145deg, #0d0d0d, #141414);
-            border: 1px solid rgba(212, 175, 55, 0.25);
-            max-width: 450px;
+            background: rgba(10, 9, 7, 0.65);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            max-width: 440px;
             margin: 0 auto;
-            padding: 40px 30px;
-            border-radius: 0px; /* শার্প এজ লাক্সারি থিম */
-            box-shadow: 0px 20px 50px rgba(0,0,0,0.9), inset 0px 1px 2px rgba(212,175,55,0.1);
-            transition: all 0.4s ease;
+            padding: 50px 35px;
+            position: relative;
+            box-shadow: 0px 40px 100px rgba(0,0,0,0.95), inset 0px 1px 3px rgba(251,245,183,0.15);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* বর্ডারে এক্সক্লুসিভ গোল্ডেন লাইটিং ইফেক্ট */
+        .product-box::after {
+            content: '';
+            position: absolute;
+            top: -1px; left: -1px; right: -1px; bottom: -1px;
+            border: 1px solid transparent;
+            background: linear-gradient(135deg, rgba(212,175,55,0.6), transparent 40%, rgba(170,119,28,0.5)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            pointer-events: none;
         }
 
         .product-box:hover {
-            border-color: rgba(212, 175, 55, 0.6);
-            box-shadow: 0px 25px 60px rgba(212,175,55,0.05);
-            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.7);
+            box-shadow: 0px 50px 120px rgba(212,175,55,0.08), 0px 0px 30px rgba(212,175,55,0.03);
+            transform: translateY(-8px) scale(1.01);
         }
 
         .product-title {
             font-family: 'Cinzel', serif;
-            color: #D4AF37;
-            font-size: 22px;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
+            color: #FFFFFF;
+            font-size: 20px;
+            margin-bottom: 25px;
+            letter-spacing: 3px;
+            font-weight: 600;
         }
 
         .product-desc {
-            color: #A6A6A6;
-            font-size: 14px;
-            line-height: 1.8;
-            font-weight: 200;
-            padding: 0 10px;
+            color: #d1d1d1;
+            font-size: 13.5px;
+            line-height: 2;
+            font-weight: 300;
+            letter-spacing: 0.5px;
         }
 
         .price {
             font-family: 'Cinzel', serif;
-            font-size: 26px;
-            color: #E6C667;
-            margin: 30px 0 15px 0;
+            font-size: 28px;
+            background: linear-gradient(135deg, #fbf5b7, #cf9f3d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 35px 0 10px 0;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .limited-tag {
-            font-size: 11px;
-            color: #D4AF37;
+            font-size: 10px;
+            color: #b59b61;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-            opacity: 0.8;
+            letter-spacing: 3px;
+            margin-bottom: 35px;
+            font-weight: 300;
         }
 
-        /* আল্ট্রা-প্রিমিয়াম সিগনেচার বাটন */
+        /* প্রিমিয়াম সিগনেচার বাটন (ইনভিটেশন অনলি) */
         .btn {
-            background-color: transparent;
-            color: #D4AF37;
-            border: 1px solid #D4AF37;
-            padding: 15px 40px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 3px;
+            background: linear-gradient(135deg, #b38728 0%, #aa771c 100%);
+            color: #000000;
+            border: none;
+            padding: 18px 45px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
             cursor: pointer;
             text-transform: uppercase;
             transition: all 0.4s ease;
-            position: relative;
+            box-shadow: 0px 10px 30px rgba(170,119,28,0.3);
         }
 
         .btn:hover {
-            background-color: #D4AF37;
-            color: #050505;
-            box-shadow: 0px 0px 25px rgba(212,175,55,0.4);
+            background: linear-gradient(135deg, #fbf5b7 0%, #cf9f3d 100%);
+            box-shadow: 0px 15px 40px rgba(212,175,55,0.6);
+            transform: translateY(-2px);
         }
 
         footer {
-            margin-top: 60px;
-            font-size: 11px;
-            color: #404040;
-            letter-spacing: 2px;
+            position: relative;
+            z-index: 10;
+            margin-top: 40px;
+            padding-bottom: 50px;
+            font-size: 10px;
+            color: #555555;
+            letter-spacing: 3px;
             text-transform: uppercase;
+            font-weight: 300;
         }
     </style>
 </head>
