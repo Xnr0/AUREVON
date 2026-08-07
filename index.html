@@ -5,98 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AUREVON | Define The Absolute</title>
     <style>
-        /* রাজকীয় ম্যাট ব্ল্যাক ও গোল্ডেন থিম */
+        @import url('https://googleapis.com');
+
+        /* আল্ট্রা-লাক্সারি ডার্ক মিনিমালিজম */
         body {
             margin: 0;
             padding: 0;
-            background-color: #0B0B0B;
+            background-color: #050505;
             color: #FFFFFF;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Montserrat', sans-serif;
             text-align: center;
+            overflow-x: hidden;
         }
         
-        /* হেডার সেকশন */
+        /* রাজকীয় মেটালিক হেডার */
         header {
-            padding: 40px 20px;
-            border-bottom: 1px solid #D4AF37;
+            padding: 50px 20px;
+            background: linear-gradient(180deg, rgba(212,175,55,0.05) 0%, rgba(0,0,0,0) 100%);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
         }
         
         .logo {
-            font-size: 45px;
-            letter-spacing: 8px;
+            font-family: 'Cinzel', serif;
+            font-size: 50px;
+            letter-spacing: 12px;
             color: #D4AF37;
             margin: 0;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(212, 175, 55, 0.3);
+            font-weight: 700;
+            background: linear-gradient(45deg, #B38728, #FBF5B7, #DAA520, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 2px 10px rgba(212,175,55,0.3));
         }
 
         .slogan {
-            font-size: 16px;
-            letter-spacing: 4px;
-            color: #A0A0A0;
-            margin-top: 10px;
+            font-size: 13px;
+            letter-spacing: 6px;
+            color: #8C8C8C;
+            margin-top: 15px;
             text-transform: uppercase;
+            font-weight: 200;
         }
 
-        /* হিরো ব্যানার */
+        /* মেইন কন্টেইনার */
         .hero {
-            padding: 100px 20px;
+            padding: 80px 20px;
         }
 
         .hero h2 {
-            font-size: 32px;
+            font-family: 'Cinzel', serif;
+            font-size: 26px;
             color: #FFFFFF;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+            letter-spacing: 4px;
+            font-weight: 400;
         }
 
-        /* প্রোডাক্ট সেকশন */
+        /* প্রিমিয়াম কন্টেইনার বক্স */
         .product-box {
-            background-color: #141414;
-            border: 1px solid #D4AF37;
-            max-width: 500px;
+            background: linear-gradient(145deg, #0d0d0d, #141414);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            max-width: 450px;
             margin: 0 auto;
-            padding: 30px;
-            border-radius: 4px;
-            box-shadow: 0px 10px 30px rgba(0,0,0,0.7);
+            padding: 40px 30px;
+            border-radius: 0px; /* শার্প এজ লাক্সারি থিম */
+            box-shadow: 0px 20px 50px rgba(0,0,0,0.9), inset 0px 1px 2px rgba(212,175,55,0.1);
+            transition: all 0.4s ease;
+        }
+
+        .product-box:hover {
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0px 25px 60px rgba(212,175,55,0.05);
+            transform: translateY(-5px);
         }
 
         .product-title {
+            font-family: 'Cinzel', serif;
             color: #D4AF37;
-            font-size: 24px;
-            margin-bottom: 15px;
+            font-size: 22px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
         }
 
         .product-desc {
-            color: #CCCCCC;
-            font-size: 16px;
-            line-height: 1.6;
+            color: #A6A6A6;
+            font-size: 14px;
+            line-height: 1.8;
+            font-weight: 200;
+            padding: 0 10px;
         }
 
         .price {
-            font-size: 22px;
-            color: #D4AF37;
-            margin: 20px 0;
-            font-weight: bold;
+            font-family: 'Cinzel', serif;
+            font-size: 26px;
+            color: #E6C667;
+            margin: 30px 0 15px 0;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        /* মেম্বারশিপ বাটন */
-        .btn {
-            background-color: #D4AF37;
-            color: #0B0B0B;
-            border: none;
-            padding: 12px 30px;
-            font-size: 16px;
-            font-weight: bold;
+        .limited-tag {
+            font-size: 11px;
+            color: #D4AF37;
+            text-transform: uppercase;
             letter-spacing: 2px;
+            margin-bottom: 25px;
+            opacity: 0.8;
+        }
+
+        /* আল্ট্রা-প্রিমিয়াম সিগনেচার বাটন */
+        .btn {
+            background-color: transparent;
+            color: #D4AF37;
+            border: 1px solid #D4AF37;
+            padding: 15px 40px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 3px;
             cursor: pointer;
             text-transform: uppercase;
-            transition: 0.3s;
+            transition: all 0.4s ease;
+            position: relative;
         }
 
         .btn:hover {
-            background-color: #FFFFFF;
-            color: #0B0B0B;
-            box-shadow: 0px 0px 15px #D4AF37;
+            background-color: #D4AF37;
+            color: #050505;
+            box-shadow: 0px 0px 25px rgba(212,175,55,0.4);
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 11px;
+            color: #404040;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -108,17 +151,22 @@
     </header>
 
     <section class="hero">
-        <h2>The Golden Launch</h2>
+        <h2>THE INITIAL COLLECTION</h2>
         
         <div class="product-box">
-            <h3 class="product-title">Noire: Edible 24K Gold Truffle Box</h3>
+            <h3 class="product-title">NOIRE: 24K GOLD TRUFFLE</h3>
             <p class="product-desc">
                 বিশ্বের সবচেয়ে দুর্লভ হোয়াইট ট্রাফল ও ডার্ক চকলেটের এক রাজকীয় ফিউশন, যা আবৃত খাঁটি খাওয়ার উপযোগী ২৪ ক্যারেট সোনার পাতে। প্রতিটি বক্স একটি কাস্টম-মেড ব্ল্যাক ভেলভেট কেসে হ্যান্ডক্রাফটেড করা হয়।
             </p>
             <div class="price">$250 USD</div>
-            <button class="btn">Enter The Empire</button>
+            <div class="limited-tag">// Batch 01: Only 50 Boxes Available</div>
+            <button class="btn">Request Invitation</button>
         </div>
     </section>
+
+    <footer>
+        &copy; 2026 AUREVON PRIVÉ. All Rights Reserved.
+    </footer>
 
 </body>
 </html>
